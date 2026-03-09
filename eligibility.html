@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Check Loan Eligibility</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Bank Loan Eligibility Checker System</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="eligibility.html">Check Loan</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<main>
+
+    <div class="form-card">
+
+        <h2>Loan Eligibility Form</h2>
+
+        <form id="loanForm">
+
+            <label>Name</label> <input type="text" id="name" required>
+
+            <label>Age</label> <input type="number" id="age" required>
+
+            <label>Monthly Salary</label> <input type="number" id="salary" required>
+
+            <label>Credit Score</label> <input type="number" id="credit" required>
+
+            <label>Loan Type</label> <select id="loanType">
+
+            <option>Personal Loan</option>
+            <option>Home Loan</option>
+            <option>Car Loan</option>
+            <option>Education Loan</option>
+            <option>Business Loan</option>
+        </select>
+
+            <label>Loan Amount</label> <input type="number" id="amount" required>
+
+            <label>Loan Tenure (Years)</label> <input type="number" id="tenure" required>
+
+            <button type="submit">Check Eligibility</button>
+
+        </form>
+
+    </div>
+
+</main>
+
+<footer>
+    © 2026 Bank Loan Eligibility Checker System
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
