@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Loan Eligibility Result</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+    <h1>Loan Eligibility Result</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="eligibility.html">Check Loan</a>
+        <a href="about.html">About</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <div id="resultCard" class="result-card"></div>
+
+</main>
+
+<footer>
+    © 2026 Bank Loan Eligibility Checker System
+</footer>
+
+<script>
+
+    let eligible = localStorage.getItem("eligible") === "true";
+    let reason = localStorage.getItem("reason");
+    let loanType = localStorage.getItem("loanType");
+    let amount = localStorage.getItem("amount");
+    let interest = localStorage.getItem("interest");
+    let emi = localStorage.getItem("emi");
+
+    let card = document.getElementById("resultCard");
+
+    if(eligible){
+
+    card.classList.add("success");
+
+    card.innerHTML = `
+    <h2>✅ Loan Approved</h2>
+
+    <p class="loan-title">${loanType}</p>
+
+    <p><b>Loan Amount:</b> ₹${amount}</p>
+    <p><b>Interest Rate:</b> ${interest}%</p>
+    <p><b>Monthly EMI:</b> ₹${emi}</p>
+
+    <a href="eligibility.html" class="btn">
+    Check Another Loan
+    </a>
+    `;
+
+    }
+
+    else{
+
+    card.classList.add("reject");
+
+    card.innerHTML = `
+    <h2>❌ Loan Rejected</h2>
+
+    <p class="loan-title">${loanType}</p>
+
+    <p class="reason"><b>Reason:</b> ${reason}</p>
+
+    <a href="eligibility.html" class="btn">
+    Check Another Loan
+    </a>
+    `;
+
+    }
+
+</script>
+
+</body>
+</html>
